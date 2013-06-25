@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>refliksWebService</display-name>
+	<description>
+	
+    </description>
+    
+    
+    <filter>
+		<filter-name>ProcessReflinksFilter</filter-name>
+		<filter-class>com.highwire.reflinks.ProcessReflinksFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ProcessReflinksFilter</filter-name>
+		<url-pattern>/arXiv/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>ProcessReflinksServlets</display-name>
+		<servlet-name>ProcessReflinksServlets</servlet-name>
+		<servlet-class>com.highwire.reflinks.ProcessReflinksServlets</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProcessReflinksServlets</servlet-name>
+		<url-pattern>/arXiv/*</url-pattern>
+	</servlet-mapping>
+</web-app>
